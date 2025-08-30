@@ -14,11 +14,11 @@
     <TargetFrameworkProfile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
-    <PlatformTarget>AnyCPU</PlatformTarget>
+    <PlatformTarget>x86</PlatformTarget>
     <DebugSymbols>true</DebugSymbols>
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
-    <OutputPath>bin\Debug\</OutputPath>
+    <OutputPath>Output\Bin\Debug\</OutputPath>
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
@@ -28,7 +28,7 @@
     <PlatformTarget>AnyCPU</PlatformTarget>
     <DebugType>pdbonly</DebugType>
     <Optimize>true</Optimize>
-    <OutputPath>bin\Release\</OutputPath>
+    <OutputPath>Output\Bin\Release\</OutputPath>
     <DefineConstants>TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
@@ -43,12 +43,20 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AssemblyInfo.cs" />
-    <Compile Include="BspOptionsForm.cs" />
-    <Compile Include="CreateMapForm.cs" />
+    <Compile Include="BspOptionsForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CreateMapForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="DVar.cs" />
     <Compile Include="Launcher.cs" />
-    <Compile Include="LauncherForm.cs" />
-    <Compile Include="LightOptionsForm.cs" />
+    <Compile Include="LauncherForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="LightOptionsForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Settings.cs" />
   </ItemGroup>
   <ItemGroup>
