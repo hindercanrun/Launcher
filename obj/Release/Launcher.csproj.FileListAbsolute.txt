@@ -1,0 +1,13 @@
+D:\tttttttttttttttttttttttttttttttttttttttttttt\Launcher\bin\Release\Launcher.exe.config
+D:\tttttttttttttttttttttttttttttttttttttttttttt\Launcher\bin\Release\Launcher.exe
+D:\tttttttttttttttttttttttttttttttttttttttttttt\Launcher\bin\Release\Launcher.pdb
+D:\tttttttttttttttttttttttttttttttttttttttttttt\Launcher\obj\Release\Launcher.csproj.AssemblyReference.cache
+D:\tttttttttttttttttttttttttttttttttttttttttttt\Launcher\obj\Release\LauncherCS.BspOptionsForm.resources
+D:\tttttttttttttttttttttttttttttttttttttttttttt\Launcher\obj\Release\LauncherCS.CreateMapForm.resources
+D:\tttttttttttttttttttttttttttttttttttttttttttt\Launcher\obj\Release\LauncherCS.LauncherForm.resources
+D:\tttttttttttttttttttttttttttttttttttttttttttt\Launcher\obj\Release\LauncherCS.LightOptionsForm.resources
+D:\tttttttttttttttttttttttttttttttttttttttttttt\Launcher\obj\Release\Launcher.csproj.GenerateResource.cache
+D:\tttttttttttttttttttttttttttttttttttttttttttt\Launcher\obj\Release\Launcher.csproj.CoreCompileInputs.cache
+D:\tttttttttttttttttttttttttttttttttttttttttttt\Launcher\obj\Release\Launcher.exe
+D:\tttttttttttttttttttttttttttttttttttttttttttt\Launcher\obj\Release\Launcher.pdb
+D:\tttttttttttttttttttttttttttttttttttttttttttt\Launcher\obj\Release\Launcher.exe.config

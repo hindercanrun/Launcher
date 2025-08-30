@@ -42,29 +42,18 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Launcher\Properties\Resources.cs" />
-    <Compile Include="Launcher\Properties\Settings.cs" />
-    <Compile Include="BspOptionsForm.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="CreateMapForm.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="LauncherForm.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Settings.cs" />
+    <Compile Include="AssemblyInfo.cs" />
+    <Compile Include="BspOptionsForm.cs" />
+    <Compile Include="CreateMapForm.cs" />
     <Compile Include="DVar.cs" />
     <Compile Include="Launcher.cs" />
-    <Compile Include="LightOptionsForm.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="AssemblyInfo.cs" />
+    <Compile Include="LauncherForm.cs" />
+    <Compile Include="LightOptionsForm.cs" />
+    <Compile Include="Settings.cs" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="BspOptionsForm.resx" />
     <EmbeddedResource Include="CreateMapForm.resx" />
-    <EmbeddedResource Include="Launcher\Properties\Resources.resx" />
     <EmbeddedResource Include="LauncherForm.resx" />
     <EmbeddedResource Include="LightOptionsForm.resx" />
   </ItemGroup>
