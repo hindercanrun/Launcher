@@ -10,7 +10,7 @@
     <TargetFrameworkVersion>v4.8.1</TargetFrameworkVersion>
     <ApplicationVersion>1.0.0.0</ApplicationVersion>
     <FileAlignment>512</FileAlignment>
-    <RootNamespace>LauncherCS</RootNamespace>
+    <RootNamespace>Launcher</RootNamespace>
     <TargetFrameworkProfile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">

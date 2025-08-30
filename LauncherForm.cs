@@ -1,10 +1,4 @@
-﻿// Decompiled with JetBrains decompiler
-// Type: LauncherCS.LauncherForm
-// Assembly: Launcher, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-// MVID: 95679BB7-C92C-4A2A-8DBF-1C9AAEB82003
-// Assembly location: D:\pluto_t4_full_game\pluto_t4_full_game\bin\Launcher.exe
-
-using System;
+﻿using System;
 using System.Collections;
 using System.ComponentModel;
 using System.Diagnostics;
@@ -16,53 +10,53 @@ using System.Threading;
 using System.Windows.Forms;
 using System.Windows.Forms.Layout;
 
-namespace LauncherCS
+namespace Launcher
 {
-  public class LauncherForm : Form
-  {
-    private ComboBox[] dvarComboBoxes = new ComboBox[0];
-    private Hashtable processTable = new Hashtable();
-    private ArrayList processList = new ArrayList();
-    private Process consoleProcess;
-    private DateTime consoleProcessStartTime;
-    private string mapName;
-    private string modName;
-    private long consoleTicksWhenLastFocus = DateTime.Now.Ticks;
-    private Mutex consoleMutex = new Mutex();
-    private IContainer components;
-    private SplitContainer LauncherSplitter;
-    private TabControl LauncherTab;
-    private TabPage LauncherTabCompileLevel;
-    private TabPage LauncherTabModBuilder;
-    private TabPage LauncherTabRunGame;
-    private GroupBox LauncherApplicationsGroupBox;
-    private Button LauncherButtonRunConverter;
-    private Button LauncherButtonAssetManager;
-    private Button LauncherButtonEffectsEd;
-    private Button LauncherButtonRadiant;
-    private ListBox LauncherMapList;
-    private Button LauncherButtonCancel;
-    private ListBox LauncherProcessList;
-    private Button LauncherButtonAssetViewer;
-    private GroupBox LauncherProcessGroupBox;
-    private Button LauncherButtonTest;
-    private Button LauncherCreateMapButton;
-    private GroupBox LauncherRunGameExeTypeGroupBox;
-    private RadioButton LauncherRunGameExeTypeMpRadioButton;
-    private GroupBox LauncherRunGameModGroupBox;
-    private ComboBox LauncherRunGameModComboBox;
-    private GroupBox LauncherRunGameCommandLineGroupBox;
-    private TextBox LauncherRunGameCommandLineTextBox;
-    private Button LauncherRunGameButton;
-    private GroupBox LauncherRunGameCustomCommandLineGroupBox;
-    private TextBox LauncherRunGameCustomCommandLineTextBox;
-    private GroupBox LauncherCompileLevelOptionsGroupBox;
-    private CheckBox LauncherConnectPathsCheckBox;
-    private CheckBox LauncherCompileVisCheckBox;
-    private CheckBox LauncherCompileLightsCheckBox;
-    private CheckBox LauncherCompileBSPCheckBox;
-    private CheckBox LauncherCompileReflectionsCheckBox;
-    private Button LauncherCompileLightsButton;
+	public class LauncherForm : Form
+	{
+		private ComboBox[] dvarComboBoxes = new ComboBox[0];
+		private Hashtable processTable = new Hashtable();
+		private ArrayList processList = new ArrayList();
+		private Process consoleProcess;
+		private DateTime consoleProcessStartTime;
+		private string mapName;
+		private string modName;
+		private long consoleTicksWhenLastFocus = DateTime.Now.Ticks;
+		private Mutex consoleMutex = new Mutex();
+		private IContainer components;
+		private SplitContainer LauncherSplitter;
+		private TabControl LauncherTab;
+		private TabPage LauncherTabCompileLevel;
+		private TabPage LauncherTabModBuilder;
+		private TabPage LauncherTabRunGame;
+		private GroupBox LauncherApplicationsGroupBox;
+		private Button LauncherButtonRunConverter;
+		private Button LauncherButtonAssetManager;
+		private Button LauncherButtonEffectsEd;
+		private Button LauncherButtonRadiant;
+		private ListBox LauncherMapList;
+		private Button LauncherButtonCancel;
+		private ListBox LauncherProcessList;
+		private Button LauncherButtonAssetViewer;
+		private GroupBox LauncherProcessGroupBox;
+		private Button LauncherButtonTest;
+		private Button LauncherCreateMapButton;
+		private GroupBox LauncherRunGameExeTypeGroupBox;
+		private RadioButton LauncherRunGameExeTypeMpRadioButton;
+		private GroupBox LauncherRunGameModGroupBox;
+		private ComboBox LauncherRunGameModComboBox;
+		private GroupBox LauncherRunGameCommandLineGroupBox;
+		private TextBox LauncherRunGameCommandLineTextBox;
+		private Button LauncherRunGameButton;
+		private GroupBox LauncherRunGameCustomCommandLineGroupBox;
+		private TextBox LauncherRunGameCustomCommandLineTextBox;
+		private GroupBox LauncherCompileLevelOptionsGroupBox;
+		private CheckBox LauncherConnectPathsCheckBox;
+		private CheckBox LauncherCompileVisCheckBox;
+		private CheckBox LauncherCompileLightsCheckBox;
+		private CheckBox LauncherCompileBSPCheckBox;
+		private CheckBox LauncherCompileReflectionsCheckBox;
+		private Button LauncherCompileLightsButton;
     private Button LauncherCompileBSPButton;
     private CheckBox LauncherUseRunGameTypeOptionsCheckBox;
     private CheckBox LauncherRunMapAfterCompileCheckBox;

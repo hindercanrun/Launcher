@@ -1,65 +1,65 @@
 ﻿using System.Collections.Generic;
 
-public struct Settings
+namespace Launcher
 {
-	private Dictionary<string, string> settings;
-
-	public Settings(Dictionary<string, string> initialSettings)
+	public struct Settings
 	{
-		settings = initialSettings ?? new Dictionary<string, string>();
-	}
+		private Dictionary<string, string> settings;
 
-	public void Set(Dictionary<string, string> newSettings)
-	{
-		settings = newSettings ?? new Dictionary<string, string>();
-	}
-
-	public Dictionary<string, string> Get()
-	{
-		return settings;
-	}
-
-	public bool GetBoolean(string key)
-	{
-		string value;
-		if (settings.TryGetValue(key, out value))
+		public Settings(Dictionary<string, string> initialSettings)
 		{
-			bool result;
-			return bool.TryParse(value, out result) && result;
+			settings = initialSettings ?? new Dictionary<string, string>();
 		}
-		return false;
-	}
 
-	public decimal GetDecimal(string key)
-	{
-		string value;
-		if (settings.TryGetValue(key, out value))
+		public void Set(Dictionary<string, string> newSettings)
 		{
-			decimal result;
-			if (decimal.TryParse(value, out result))
-				return result;
+			settings = newSettings ?? new Dictionary<string, string>();
 		}
-		return 0M;
-	}
 
-	public string GetString(string key)
-	{
-		string value;
-		return settings.TryGetValue(key, out value) ? value : "";
-	}
+		public Dictionary<string, string> Get()
+		{
+			return settings;
+		}
 
-	public void SetBoolean(string key, bool value)
-	{
-		settings[key] = value.ToString();
-	}
+		public bool GetBoolean(string key)
+		{
+			if (settings.TryGetValue(key, out string value))
+			{
+				return bool.TryParse(value, out bool result) && result;
+			}
+			return false;
+		}
 
-	public void SetDecimal(string key, decimal value)
-	{
-		settings[key] = value.ToString();
-	}
+		public decimal GetDecimal(string key)
+		{
+			if (settings.TryGetValue(key, out string value))
+			{
+				if (decimal.TryParse(value, out decimal result))
+				{
+					return result;
+				}
+			}
+			return 0M;
+		}
 
-	public void SetString(string key, string value)
-	{
-		settings[key] = value ?? "";
+		public string GetString(string key)
+		{
+			return settings.TryGetValue(key, out string value) ? value : "";
+		}
+
+		public void SetBoolean(string key, bool value)
+		{
+			settings[key] = value.ToString();
+		}
+
+		public void SetDecimal(string key, decimal value)
+		{
+			settings[key] = value.ToString();
+		}
+
+		public void SetString(string key, string value)
+		{
+			settings[key] = value ?? "";
+		}
 	}
 }
