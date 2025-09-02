@@ -63,9 +63,9 @@ namespace Launcher.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Byte[].
         /// </summary>
-        internal static byte[] Icon2 {
+        internal static byte[] Icon {
             get {
-                object obj = ResourceManager.GetObject("Icon2", resourceCulture);
+                object obj = ResourceManager.GetObject("Icon", resourceCulture);
                 return ((byte[])(obj));
             }
         }

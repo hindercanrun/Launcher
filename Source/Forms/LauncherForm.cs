@@ -2060,7 +2060,7 @@ namespace Launcher
 			Controls.Add((Control)LauncherAboutLabel);
 			Controls.Add((Control)LauncherWikiLabel);
 			Controls.Add((Control)LauncherSplitter);
-			Icon = new Icon(new MemoryStream(Properties.Resources.Icon2));
+			Icon = new Icon(new MemoryStream(Properties.Resources.Icon));
 			Name = "Launcher";
 			StartPosition = FormStartPosition.CenterScreen;
 			Text = "Launcher";

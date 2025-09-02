@@ -34,7 +34,7 @@
     <Prefer32Bit>false</Prefer32Bit>
   </PropertyGroup>
   <PropertyGroup>
-    <ApplicationIcon>Icon2.ico</ApplicationIcon>
+    <ApplicationIcon>Icon.ico</ApplicationIcon>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
@@ -44,18 +44,18 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="BspOptionsForm.cs">
+    <Compile Include="Forms\BspOptionsForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="CreateMapForm.cs">
+    <Compile Include="Forms\CreateMapForm.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="DVar.cs" />
     <Compile Include="Launcher.cs" />
-    <Compile Include="LauncherForm.cs">
+    <Compile Include="Forms\LauncherForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="LightOptionsForm.cs">
+    <Compile Include="Forms\LightOptionsForm.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Properties\Resources.Designer.cs">
@@ -67,12 +67,13 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="BspOptionsForm.resx" />
-    <EmbeddedResource Include="CreateMapForm.resx" />
-    <EmbeddedResource Include="LauncherForm.resx" />
-    <EmbeddedResource Include="LightOptionsForm.resx" />
+    <EmbeddedResource Include="Forms\BspOptionsForm.resx" />
+    <EmbeddedResource Include="Forms\CreateMapForm.resx" />
+    <EmbeddedResource Include="Forms\LauncherForm.resx" />
+    <EmbeddedResource Include="Forms\LightOptionsForm.resx" />
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
+      <SubType>Designer</SubType>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
   </ItemGroup>
@@ -80,7 +81,7 @@
     <None Include="app.config" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Icon2.ico" />
+    <Content Include="Icon.ico" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
