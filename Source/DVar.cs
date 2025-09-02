@@ -1,49 +1,41 @@
-﻿using System;
-
-namespace Launcher
+﻿namespace Launcher
 {
-	public struct DVar
+	internal readonly struct DVar
 	{
-		public string name;
-		public string description;
-		public bool isDecimal;
-		public Decimal decimalMin;
-		public Decimal decimalMax;
-		public Decimal decimalIncrement;
+		internal string Name { get; }
+		internal string Description { get; }
+		internal bool IsDecimal { get; }
+		internal decimal DecimalMin { get; }
+		internal decimal DecimalMax { get; }
+		internal decimal DecimalIncrement { get; }
 
-		public DVar(string name, string description)
+		// DVar: String
+		internal DVar(
+			string name,
+			string description)
 		{
-			this.name = name;
-			this.description = description;
-			this.isDecimal = false;
-			this.decimalMin = 0M;
-			this.decimalMax = 0M;
-			this.decimalIncrement = 0M;
+			Name = name;
+			Description = description;
+			IsDecimal = false;
+			DecimalMin = 0M;
+			DecimalMax = 0M;
+			DecimalIncrement = 0M;
 		}
 
-		public DVar(
+		// DVar: Decimal
+		internal DVar(
 			string name,
 			string description,
-			Decimal decimalMin,
-			Decimal decimalMax,
-			Decimal decimalIncrement)
+			decimal min,
+			decimal max,
+			decimal increment = 1M)
 		{
-			this.name = name;
-			this.description = description;
-			this.isDecimal = true;
-			this.decimalMin = decimalMin;
-			this.decimalMax = decimalMax;
-			this.decimalIncrement = decimalIncrement;
-		}
-
-		public DVar(string name, string description, Decimal decimalMin, Decimal decimalMax)
-		{
-			this.name = name;
-			this.description = description;
-			this.isDecimal = true;
-			this.decimalMin = decimalMin;
-			this.decimalMax = decimalMax;
-			this.decimalIncrement = 1M;
+			Name = name;
+			Description = description;
+			IsDecimal = true;
+			DecimalMin = min;
+			DecimalMax = max;
+			DecimalIncrement = increment;
 		}
 	}
 }

@@ -5,8 +5,8 @@ using System.Windows.Forms;
 
 namespace Launcher
 {
-  public class CreateMapForm : Form
-  {
+	public class CreateMapForm : Form
+	{
 		private IContainer components;
 		private GroupBox MapTemplatesGroupBox;
 		private ListBox MapTemplatesListBox;
@@ -15,7 +15,10 @@ namespace Launcher
 		private Button MapCreateButtonOK;
 		private Button MapCreateButtonCancel;
 
-		public CreateMapForm() => InitializeComponent();
+		public CreateMapForm()
+		{
+			InitializeComponent();
+		}
 
 		private void MapCreateButtonOK_Click(object sender, EventArgs e)
 		{
@@ -25,7 +28,14 @@ namespace Launcher
 			bool flag = true;
 
 			string[] mapFromTemplate = Launcher.CreateMapFromTemplate(mapTemplate, mapName, true);
-			if (mapFromTemplate.Length > 0 && DialogResult.No == MessageBox.Show("Certain files would be overwritten:\n\n" + Launcher.StringArrayToString(mapFromTemplate) + "\nDo you want to continue?", "Should overwrite files?", MessageBoxButtons.YesNo, MessageBoxIcon.Exclamation))
+			if (mapFromTemplate.Length > 0 &&
+				DialogResult.No == MessageBox.Show(
+					"Certain files would be overwritten:\n\n" +
+					Launcher.StringArrayToString(mapFromTemplate) +
+					"\nDo you want to continue?",
+					"Should overwrite files?",
+					MessageBoxButtons.YesNo,
+					MessageBoxIcon.Exclamation))
 			{
 				flag = false;
 			}
@@ -34,7 +44,6 @@ namespace Launcher
 			{
 				Launcher.CreateMapFromTemplate(mapTemplate, mapName);
 			}
-
 			DialogResult = DialogResult.OK;
 			Close();
 		}
@@ -51,13 +60,13 @@ namespace Launcher
 			bool flag = Launcher.IsMultiplayerMapTemplate(MapTemplatesListBox.Items[selectedIndex].ToString());
 			string name = Launcher.FilterMP(MapNameTextBox.Text);
 
-			MapNameTextBox.Text = flag ? Launcher.MakeMP(name) : name;
+			MapNameTextBox.Text = (flag) ? Launcher.MakeMP(name) : name;
 		}
 
 		private void LauncherCreateMapForm_Load(object sender, EventArgs e)
 		{
 			MapTemplatesListBox.Items.Clear();
-			MapTemplatesListBox.Items.AddRange((object[]) Launcher.GetMapTemplatesList());
+			MapTemplatesListBox.Items.AddRange((object[])Launcher.GetMapTemplatesList());
 			MapTemplatesListBox.SelectedIndex = 0;
 		}
 

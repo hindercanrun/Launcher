@@ -23,7 +23,10 @@ namespace Launcher
 		private RadioButton LightOptionsExtraRadioButton;
 		private RadioButton LightOptionsFastRadioButton;
 
-		public LightOptionsForm() => InitializeComponent();
+		public LightOptionsForm()
+		{
+			InitializeComponent();
+		}
 
 		private void LightOptionsFormUpdate()
 		{
@@ -79,7 +82,10 @@ namespace Launcher
 			Close();
 		}
 
-		private void LightOptionsButtonCancel_Click(object sender, EventArgs e) => Close();
+		private void LightOptionsButtonCancel_Click(object sender, EventArgs e)
+		{
+			Close();
+		}
 
 		private void InitializeComponent()
 		{

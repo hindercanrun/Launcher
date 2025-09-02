@@ -109,9 +109,9 @@ namespace Launcher
 			Color backColor = gameOptionsPanel.BackColor;
 			Color color = Color.FromArgb((int)backColor.R * 14 / 15, (int)backColor.G * 14 / 15, (int)backColor.B * 14 / 15);
 
-			dvarComboBoxes = new ComboBox[Launcher.dvars.Length];
+			dvarComboBoxes = new ComboBox[Launcher.DVars.Length];
 
-			foreach (DVar dvar in Launcher.dvars)
+			foreach (DVar dvar in Launcher.DVars)
 			{
 				Panel panel = new Panel();
 				panel.SetBounds(0, num1 += height, gameOptionsPanel.ClientSize.Width, height);
@@ -122,28 +122,28 @@ namespace Launcher
 				Label label = new Label();
 				label.SetBounds(4, 0, gameOptionsPanel.ClientSize.Width - 220, height);
 				label.TextAlign = ContentAlignment.MiddleLeft;
-				label.Text = dvar.name + " (" + dvar.description + ")";
+				label.Text = dvar.Name + " (" + dvar.Description + ")";
 				label.Click += new EventHandler(LauncherGameOptionsFlowPanel_Click);
 				panel.Controls.Add((Control) label);
 
 				ComboBox comboBox = new ComboBox
 				{
-					Tag = (object)dvar.name
+					Tag = (object)dvar.Name
 				};
 				comboBox.Items.Add((object)"(not set)");
 				comboBox.AutoCompleteMode = AutoCompleteMode.SuggestAppend;
 				comboBox.AutoCompleteSource = AutoCompleteSource.ListItems;
 
-				if (dvar.isDecimal)
+				if (dvar.IsDecimal)
 				{
-					Decimal decimalMin = dvar.decimalMin;
-					while (decimalMin <= dvar.decimalMax)
+					Decimal decimalMin = dvar.DecimalMin;
+					while (decimalMin <= dvar.DecimalMax)
 					{
 						comboBox.Items.Add((object)decimalMin.ToString());
-						decimalMin += dvar.decimalIncrement;
+						decimalMin += dvar.DecimalIncrement;
 					}
 				}
-				else if (dvar.name == "devmap")
+				else if (dvar.Name == "devmap")
 				{
 					comboBox.Items.AddRange((object[])Launcher.GetMapList());
 				}
@@ -1088,7 +1088,7 @@ namespace Launcher
 
 		private void LauncherWikiLabel_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
 		{
-			Process.Start("http://wiki.treyarch.com");
+			Process.Start("https://web.archive.org/web/20090228020203/http://wiki.treyarch.com/wiki/Main_Page");
 		}
 
 		private void LauncherRunGameButton_Click(object sender, EventArgs e)

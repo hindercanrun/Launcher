@@ -1,40 +1,43 @@
 ﻿using System.Collections.Generic;
+using System.Globalization;
 
 namespace Launcher
 {
-	public struct Settings
+	internal struct Settings
 	{
-		private Dictionary<string, string> settings;
+		internal Dictionary<string, string> Values { get; private set; }
 
-		public Settings(Dictionary<string, string> initialSettings)
+		internal Settings(Dictionary<string, string> initialSettings)
 		{
-			settings = initialSettings ?? new Dictionary<string, string>();
+			Values = initialSettings ?? new Dictionary<string, string>();
 		}
 
-		public void Set(Dictionary<string, string> newSettings)
+		internal void Set(Dictionary<string, string> newSettings)
 		{
-			settings = newSettings ?? new Dictionary<string, string>();
+			Values = newSettings ?? new Dictionary<string, string>();
 		}
 
-		public Dictionary<string, string> Get()
+		internal Dictionary<string, string> Get()
 		{
-			return settings;
+			return Values;
 		}
 
-		public bool GetBoolean(string key)
+		internal bool GetBoolean(string key)
 		{
-			if (settings.TryGetValue(key, out string value))
+			if (Values.TryGetValue(key, out string value))
 			{
 				return bool.TryParse(value, out bool result) && result;
 			}
 			return false;
 		}
 
-		public decimal GetDecimal(string key)
+		internal decimal GetDecimal(string key)
 		{
-			if (settings.TryGetValue(key, out string value))
+			if (Values.TryGetValue(key, out var value))
 			{
-				if (decimal.TryParse(value, out decimal result))
+				// Okay so apparently this can have issues on German machines.
+				// Their PCs will put it as 0,11 instead of 0.11, so hopefully this workaround works
+				if (decimal.TryParse(value, NumberStyles.Any, CultureInfo.InvariantCulture, out var result))
 				{
 					return result;
 				}
@@ -42,24 +45,24 @@ namespace Launcher
 			return 0M;
 		}
 
-		public string GetString(string key)
+		internal string GetString(string key)
 		{
-			return settings.TryGetValue(key, out string value) ? value : "";
+			return Values.TryGetValue(key, out string value) ? value : "";
 		}
 
-		public void SetBoolean(string key, bool value)
+		internal void SetBoolean(string key, bool value)
 		{
-			settings[key] = value.ToString();
+			Values[key] = value.ToString();
 		}
 
-		public void SetDecimal(string key, decimal value)
+		internal void SetDecimal(string key, decimal value)
 		{
-			settings[key] = value.ToString();
+			Values[key] = value.ToString(CultureInfo.InvariantCulture);
 		}
 
-		public void SetString(string key, string value)
+		internal void SetString(string key, string value)
 		{
-			settings[key] = value ?? "";
+			Values[key] = value ?? "";
 		}
 	}
 }

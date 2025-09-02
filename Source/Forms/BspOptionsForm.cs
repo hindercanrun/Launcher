@@ -20,7 +20,10 @@ namespace Launcher
 		private Button BspOptionsButtonCancel;
 		private TextBox BspOptionsExtraOptionsTextBox;
 
-		public BspOptionsForm() => InitializeComponent();
+		public BspOptionsForm()
+		{
+			InitializeComponent();
+		}
 
 		private void BspOptionsFormUpdate()
 		{
@@ -59,8 +62,9 @@ namespace Launcher
 			Launcher.mapSettings.SetBoolean("bspoptions_samplescale", BspOptionsSampleScaleCheckBox.Checked);
 			Launcher.mapSettings.SetBoolean("bspoptions_debuglightmaps", BspOptionsDebugLightsCheckBox.Checked);
 			Launcher.mapSettings.SetDecimal("bspoptions_blocksize_val", BspOptionsBlockSizeNumericUpDown.Value);
-			Launcher.mapSettings.SetDecimal("bspoptions_samplescale_val", this.BspOptionsSampleScaleNumericUpDown.Value);
+			Launcher.mapSettings.SetDecimal("bspoptions_samplescale_val", BspOptionsSampleScaleNumericUpDown.Value);
 			Launcher.mapSettings.SetString("bspoptions_extraoptions", BspOptionsExtraOptionsTextBox.Text);
+
 			Close();
 		}
 
