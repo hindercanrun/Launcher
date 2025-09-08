@@ -453,25 +453,25 @@ namespace Launcher
 			return (IsMP(name)) ? name.Substring(3) : name;
 		}
 
-		internal static void WriteMessage(string s, Color messageColor)
+		internal static void WriteMessage(string str, Color messageColour)
 		{
 			var console = TheLauncherForm.LauncherConsole;
 
-			Color originalColor = console.SelectionColor;
-			console.SelectionColor = messageColor;
-			console.AppendText(s);
-			console.SelectionColor = originalColor;
+			Color originalColour = console.SelectionColor;
+			console.SelectionColor = messageColour;
+			console.AppendText(str);
+			console.SelectionColor = originalColour;
 			console.Focus();
 		}
 
-		internal static void WriteMessage(string s)
+		internal static void WriteMessage(string str)
 		{
-			WriteMessage(s, Color.SlateBlue);
+			WriteMessage(str, Color.SlateBlue);
 		}
 
-		internal static void WriteError(string s)
+		internal static void WriteError(string str)
 		{
-			WriteMessage(s, Color.Red);
+			WriteMessage(str, Color.Red);
 		}
 
 		internal static string[] CreateMapFromTemplate(string mapTemplate, string mapName)
