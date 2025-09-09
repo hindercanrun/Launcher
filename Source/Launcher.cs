@@ -75,7 +75,7 @@ namespace Launcher
 
 			if (!fullPath.EndsWith(Path.DirectorySeparatorChar.ToString()))
 			{
-				fullPath += Path.DirectorySeparatorChar;
+				fullPath += Path.DirectorySeparatorChar.ToString();
 			}
 			return fullPath;
 		}
